@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="0dp"
+        android:layout_height="162dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="269dp"
+        android:layout_marginEnd="57dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/id_activity_main_mes_conteneurs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mes conteneurs" />
+
+        <Button
+            android:id="@+id/id_activity_main_ma_liste_de_courses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ma liste de courses" />
+
+        <Button
+            android:id="@+id/id_activity_main_idee_recettes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Idées de recettes" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="0dp"
+        android:layout_height="268dp"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:layout_width="354dp"
+            android:layout_height="wrap_content"/>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/id_activity_main_engrenage_paramètres"
+                android:layout_width="56dp"
+                android:layout_height="57dp"
+                android:src="@drawable/index" />
+        </FrameLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

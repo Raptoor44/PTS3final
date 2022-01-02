@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".aliment.Ajouter_a_frigo_general">
+
+    <Button
+        android:id="@+id/id_activity_ajouter_afrigo_general_AJOUT_MANUEL"
+        android:layout_width="199dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="100dp"
+        android:text="Ajout_manuel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/id_activity_ajouter_afrigo_general_ajouter_produit_scan"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:text="Ajouter produit scan"
+        app:layout_constraintStart_toStartOf="@+id/id_activity_ajouter_afrigo_general_AJOUT_MANUEL"
+        app:layout_constraintTop_toBottomOf="@+id/id_activity_ajouter_afrigo_general_AJOUT_MANUEL" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:srcCompat="@drawable/_1_rangement_frigo" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="231dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="140dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/nourriture" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

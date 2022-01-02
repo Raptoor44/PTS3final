@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android Studio/Projets/Agenda/PTS3/app/src/main/res/layout/activity_creer_nouvelle_liste.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/Agenda/PTS3/app/src/main/res/layout/activity_frigo.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/Agenda/PTS3/app/src/main/res/layout/activity_idee_recettes.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/Agenda/PTS3/app/src/main/res/layout/activity_liste_auto_geneer.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/Agenda/PTS3/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/Agenda/PTS3/app/src/main/res/layout/activity_mes_conteneurs.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/Agenda/PTS3/app/src/main/res/layout/activity_mes_listes.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/PTS3-Joachim_branche/app/src/main/res/layout/activity_ajouter_afrigo_general.xml" value="0.35052083333333334" />
+        <entry key="..\:/Android Studio/Projets/PTS3-Joachim_branche/app/src/main/res/layout/activity_ajouter_afrigo_manuel.xml" value="0.35052083333333334" />
+        <entry key="..\:/Android Studio/Projets/PTS3-Joachim_branche/app/src/main/res/layout/activity_ajouter_afrigo_qrcode.xml" value="0.35052083333333334" />
+        <entry key="..\:/Android Studio/Projets/PTS3-Joachim_branche/app/src/main/res/layout/activity_creer_conteneur.xml" value="0.35052083333333334" />
+        <entry key="..\:/Android Studio/Projets/PTS3-Joachim_branche/app/src/main/res/layout/activity_frigo.xml" value="0.33" />
+        <entry key="..\:/Android Studio/Projets/PTS3-Joachim_branche/app/src/main/res/layout/activity_gestion_un_aliment.xml" value="0.35052083333333334" />
+        <entry key="..\:/Android Studio/Projets/PTS3-Joachim_branche/app/src/main/res/layout/activity_gestion_un_conteneur.xml" value="0.35052083333333334" />
+        <entry key="..\:/Android Studio/Projets/PTS3-Joachim_branche/app/src/main/res/layout/activity_idee_recettes.xml" value="0.19479166666666667" />
+        <entry key="..\:/Android Studio/Projets/PTS3-Joachim_branche/app/src/main/res/layout/activity_mes_conteneurs.xml" value="0.2" />
+        <entry key="..\:/Android Studio/Projets/PTS3-Joachim_branche/app/src/main/res/layout/activity_modification_un_aliment.xml" value="0.33" />
+        <entry key="..\:/Android Studio/Projets/PTS3-Joachim_branche/app/src/main/res/layout/adaptater_view_aliment.xml" value="0.75" />
+        <entry key="..\:/Android Studio/Projets/PTS3-Joachim_branche/app/src/main/res/layout/adaptater_view_conteneurs.xml" value="0.19479166666666667" />
+        <entry key="..\:/Android Studio/Projets/PTS3-Joachim_branche/app/src/main/res/layout/adaptater_view_spinner.xml" value="0.20364583333333333" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_accessibilite.xml" value="0.33" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_ajouter_afrigo.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_ajouter_afrigo_general.xml" value="0.35833333333333334" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_ajouter_afrigo_manuel.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_ajouter_afrigo_qrcode.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_ajouter_frigo.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_creer_conteneur.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_creer_nouvelle_liste.xml" value="0.22" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_frigo.xml" value="0.33" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_gestion_un_aliment.xml" value="0.2974683544303797" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_gestion_un_conteneur.xml" value="0.2" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_idee_recettes.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_liste_auto_geneer.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_main2.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_mes_conteneurs.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_mes_listes.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/activity_parametres.xml" value="0.3484375" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/adaptater_view_aliment.xml" value="0.3625" />
+        <entry key="..\:/Android Studio/Projets/PTS3/PTS3/app/src/main/res/layout/adaptater_view_conteneurs.xml" value="0.5" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

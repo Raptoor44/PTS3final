@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Frigo">
+
+    <LinearLayout
+        android:id="@+id/linearLayout10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="409dp"
+            android:layout_height="320dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="170dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="27dp"
+                android:text="TextView" />
+
+            <FrameLayout
+                android:id="@+id/frameLayout8"
+                android:layout_width="407dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="161dp"
+                android:layout_marginBottom="36dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="250dp"
+                        android:layout_height="match_parent">
+
+                        <ImageButton
+                            android:id="@+id/id_activity_frigo_boutton_retour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/fleche_retour" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent">
+
+                        <CheckBox
+                            android:id="@+id/id_activity_frigo_recherche_categorie"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="recherche categorie" />
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/id_activity_frigo_searchView"
+                    android:layout_width="351dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="rechercher" />
+
+                <Spinner
+                    android:id="@+id/id_activity_frigo_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/id_activity_frigo_ajouter_produit"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="ajouter_produit" />
+
+                    <Button
+                        android:id="@+id/id_activity_frigo_tri_ordre_alphabetique"
+                        android:layout_width="133dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tri par ordre alphabétique" />
+
+                    <Button
+                        android:id="@+id/id_activity_frigo_tri_par_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tri par date" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="408dp">
+
+            <ListView
+                android:id="@+id/id_activity_frigo_listview_aliment"
+                android:layout_width="wrap_content"
+                android:layout_height="401dp" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.pts3">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Design">
+        <activity
+            android:name=".Conteneur.ModificationConteneur"
+            android:exported="false" />
+        <activity
+            android:name=".aliment.ModificationUnAliment"
+            android:exported="false" />
+        <activity
+            android:name=".Conteneur.Gestion_unConteneur"
+            android:exported="false" />
+        <activity
+            android:name=".aliment.Gestion_UnAliment"
+            android:exported="false" />
+        <activity
+            android:name=".qrcode.Ajouter_a_frigo_qrcode"
+            android:exported="false" />
+        <activity
+            android:name=".Conteneur.Creer_conteneur"
+            android:exported="false" />
+        <activity
+            android:name=".aliment.Ajouter_a_frigo_general"
+            android:exported="false" />
+        <activity
+            android:name=".aliment.Ajouter_a_frigo_manuel"
+            android:exported="true" />
+        <activity
+            android:name=".Parametres"
+            android:exported="true" />
+        <activity
+            android:name=".Accessibilite"
+            android:exported="true" />
+        <activity
+            android:name=".Creer_nouvelle_liste"
+            android:exported="true" />
+        <activity
+            android:name=".Liste_auto_geneer"
+            android:exported="true" />
+        <activity
+            android:name=".Mes_listes"
+            android:exported="true" />
+        <activity
+            android:name=".Idee_recettes"
+            android:exported="true" />
+        <activity
+            android:name=".Frigo"
+            android:exported="true" />
+        <activity
+            android:name=".Mes_conteneurs"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
