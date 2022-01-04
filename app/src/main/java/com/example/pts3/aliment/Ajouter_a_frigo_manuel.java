@@ -8,20 +8,26 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.pts3.Frigo;
 import com.example.pts3.R;
 import com.example.pts3.model.Aliment;
 import com.example.pts3.model.Conteneurs;
+import com.example.pts3.model.Custom_list_aliment;
 import com.example.pts3.model.List_conteneurs;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
 
 public class Ajouter_a_frigo_manuel extends AppCompatActivity {
 
@@ -33,12 +39,28 @@ public class Ajouter_a_frigo_manuel extends AppCompatActivity {
 
     private ImageButton retour;
 
+    private Spinner spinner;
+
+    private String uniteQuantite;
+    private LinkedList<String> listUnite;
+    private Boolean isValid3 = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajouter_afrigo_manuel);
 
         this.titre = findViewById(R.id.id_activity_modification_un_aliment_nom);
+        //INIT NAME CODE BAR
+
+        if (List_conteneurs.getName() != null) {
+            this.titre.setText(List_conteneurs.getName());
+            List_conteneurs.setName(null);
+        }
+
+
+        // INIT RESTE
+
         this.quantite = findViewById(R.id.id_activity_modification_un_aliment_quantite);
         this.date_peremption = findViewById(R.id.id_activity_modification_un_aliment_date_peremption);
         this.categorie = findViewById(R.id.id_activity_modification_un_aliment_categorie);
@@ -47,6 +69,43 @@ public class Ajouter_a_frigo_manuel extends AppCompatActivity {
         this.ajouter = findViewById(R.id.id_activity_modification_un_aliment_ajouter);
 
         //    public Aliment(String nom, int quantité, String unite_quantite) {
+
+        this.spinner = findViewById(R.id.id_activity_ajouter_afrigo_manuel_spinner);
+
+        listUnite = new LinkedList<String>();
+
+        listUnite.add("kg");
+        listUnite.add("g");
+        listUnite.add("unite");
+        listUnite.add("ml");
+        listUnite.add("mg");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, listUnite
+        );
+
+        // Layout for All ROWs of Spinner.  (Optional for ArrayAdapter).
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
+        this.spinner.setAdapter(adapter);
+
+        this.spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+
+                onItemSelectedHandler(parent, view, position, id);
+                isValid3 = true;
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         this.ajouter.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -77,7 +136,7 @@ public class Ajouter_a_frigo_manuel extends AppCompatActivity {
                     valide2_ = true;
 
 
-                    Log.e("La date : " ,date.toString());
+                    Log.e("La date : ", date.toString());
                 } catch (ParseException e) {
                     Toast.makeText(getApplicationContext(), "Erreur, vous n'avez pas entrez une date valide !, Veuillez recommencer",
                             Toast.LENGTH_LONG).show();
@@ -90,8 +149,8 @@ public class Ajouter_a_frigo_manuel extends AppCompatActivity {
                 }
 
 
-                if (valide == true && valide2_ == true) {
-                    Aliment aliment = new Aliment(titre.getText().toString(), quantite_, categorie.getText().toString(), date);
+                if (valide == true && valide2_ == true && isValid3 == true) {
+                    Aliment aliment = new Aliment(titre.getText().toString(), quantite_, categorie.getText().toString(), date, uniteQuantite);
                     for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
                         if (conteneur.isIsvalid() == true) {
 
@@ -122,5 +181,11 @@ public class Ajouter_a_frigo_manuel extends AppCompatActivity {
         });
 
     }
+
+    private void onItemSelectedHandler(AdapterView<?> adapterView, View view, int position, long id) {
+        uniteQuantite = this.listUnite.get(position);
+
+    }
+
 
 }

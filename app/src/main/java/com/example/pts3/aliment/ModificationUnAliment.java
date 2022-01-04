@@ -8,8 +8,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.pts3.Frigo;
@@ -23,6 +26,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.LinkedList;
 
 
 public class ModificationUnAliment extends AppCompatActivity {
@@ -37,6 +41,11 @@ public class ModificationUnAliment extends AppCompatActivity {
     private Button ajouter;
     private ImageButton retour;
 
+    private Spinner spinner;
+
+    private String uniteQuantite;
+    private LinkedList<String> listUnite;
+    private boolean isValid3 = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +62,49 @@ public class ModificationUnAliment extends AppCompatActivity {
         ajouter = findViewById(R.id.id_activity_modification_un_aliment_ajouter);
 
 
-        for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
-            if (conteneur.isIsvalid() == true) {
-                for (Aliment aliment : conteneur.getAliments()) {
+        this.spinner = findViewById(R.id.id_activity_ajouter_afrigo_manuel_spinner);
+
+        listUnite = new LinkedList<String>();
+
+        listUnite.add("kg");
+        listUnite.add("g");
+        listUnite.add("unite");
+        listUnite.add("ml");
+        listUnite.add("mg");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, listUnite
+        );
+
+        // Layout for All ROWs of Spinner.  (Optional for ArrayAdapter).
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
+        this.spinner.setAdapter(adapter);
+
+        this.spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+
+                onItemSelectedHandler(parent, view, position, id);
+                isValid3 = true;
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+
+
+        for (Conteneurs conteneur_ : List_conteneurs.getConteneursList()) {
+            if (conteneur_.isIsvalid() == true) {
+                for (Aliment aliment : conteneur_.getAliments()) {
                     if (aliment.getIsvalide() == true) {
 
 
@@ -73,11 +122,6 @@ public class ModificationUnAliment extends AppCompatActivity {
 
 
                         categorie.setText(aliment.getCategorie());
-
-
-                        aliment.setIsvalide(false);
-
-                        conteneur.getAliments().remove(aliment);
 
 
                     }
@@ -129,15 +173,24 @@ public class ModificationUnAliment extends AppCompatActivity {
                 }
 
 
-                if (valide == true && valide2_ == true) {
-                    Aliment aliment = new Aliment(titre.getText().toString(), quantite_,categorie.getText().toString(), date);
+                if (valide == true && valide2_ == true && isValid3 == true) {
+
                     for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
                         if (conteneur.isIsvalid() == true) {
 
-                            aliment.setId(conteneur.getStatic_id_aliment());
-                            conteneur.setStatic_id_aliment(conteneur.getStatic_id_aliment() + 1);
-                            conteneur.getAliments().add(aliment);
+                            for (Aliment aliment : conteneur.getAliments()) {
 
+                                if (aliment.getIsvalide()) {
+                                    aliment.setId(conteneur.getStatic_id_aliment());
+                                    conteneur.setStatic_id_aliment(conteneur.getStatic_id_aliment() + 1);
+
+                                    aliment.setCategorie(categorie.getText().toString());
+                                    aliment.setNom(titre.getText().toString());
+                                    aliment.setQuantité(quantite_);
+                                    aliment.setDate_peremption(date);
+                                    aliment.setUnite_quantite(uniteQuantite);
+                                }
+                            }
                         }
                     }
 
@@ -159,6 +212,11 @@ public class ModificationUnAliment extends AppCompatActivity {
                 finish();
             }
         });
+
+    }
+
+    private void onItemSelectedHandler(AdapterView<?> adapterView, View view, int position, long id) {
+        uniteQuantite = this.listUnite.get(position);
 
     }
 }

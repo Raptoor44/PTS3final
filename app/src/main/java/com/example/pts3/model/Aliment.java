@@ -21,12 +21,13 @@ public class Aliment {
     private int id;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public Aliment(String nom, int quantité, String categorie, Date date_peremption) {
+    public Aliment(String nom, int quantité, String categorie, Date date_peremption, String unite_quantite) {
         this.nom = nom;
         this.quantité = quantité;
         this.categorie = categorie;
         this.date_peremption = date_peremption;
         this.date_ajout = LocalDateTime.now();
+        this.unite_quantite = unite_quantite;
 
     }
 
@@ -66,6 +67,22 @@ public class Aliment {
         this.id = id;
     }
 
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setQuantité(int quantité) {
+        this.quantité = quantité;
+    }
+
+    public void setUnite_quantite(String unite_quantite) {
+        this.unite_quantite = unite_quantite;
+    }
+
+    public void setDate_peremption(Date date_peremption) {
+        this.date_peremption = date_peremption;
+    }
 
     public String getCategorie() {
         return categorie;

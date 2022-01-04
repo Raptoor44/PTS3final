@@ -30,13 +30,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="33dp"
+        android:layout_marginTop="67dp"
         android:layout_marginEnd="33dp"
         android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/id_activity_ajouter_afrigo_general_ajouter_produit_scan"
         app:srcCompat="@drawable/_1_rangement_frigo" />
 
     <ImageView

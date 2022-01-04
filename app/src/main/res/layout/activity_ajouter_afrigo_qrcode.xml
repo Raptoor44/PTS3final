@@ -26,14 +26,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/id__activity_ajouter_afrigo_qrcode_date_peremption"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Date_peremenption" />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="200dp"/>
 
             <Button
                 android:id="@+id/id__activity_ajouter_afrigo_qrcode_scanner"

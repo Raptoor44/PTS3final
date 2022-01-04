@@ -80,17 +80,16 @@ public class Conteneurs {
     public void refreshCategorie() {
 
 
+        this.categories.clear();
 
-
-      for(Aliment aliment : this.aliments){
-          this.categories.add(aliment.getCategorie());
-      }
+        for (Aliment aliment : this.aliments) {
+            this.categories.add(aliment.getCategorie());
+        }
         this.categories = removeDuplicates(this.categories);
 
     }
 
-    public static <String> ArrayList<String> removeDuplicates(List<String> list)
-    {
+    public static <String> ArrayList<String> removeDuplicates(List<String> list) {
 
         // Create a new ArrayList
         ArrayList<String> newList = new ArrayList<String>();

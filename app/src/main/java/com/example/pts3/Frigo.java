@@ -130,7 +130,7 @@ public class Frigo extends AppCompatActivity {
 
 
         Conteneurs finalConteneur_ = conteneur_;
-
+        conteneur_.refreshCategorie();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                 for (Aliment aliment : finalConteneur_.getAliments()) {
@@ -263,7 +263,7 @@ public class Frigo extends AppCompatActivity {
     //TEST d'ajout aliment rapide
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void _aliment() {
-        Aliment aliment = new Aliment("test", 50, "unite", Calendar.getInstance().getTime());
+        Aliment aliment = new Aliment("test", 50, "unite", Calendar.getInstance().getTime(), "kg");
 
         for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
             if (conteneur.isIsvalid() == true) {

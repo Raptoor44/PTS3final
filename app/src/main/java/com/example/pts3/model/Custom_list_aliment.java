@@ -84,7 +84,7 @@ public class Custom_list_aliment extends BaseAdapter  {
 
         date_peremption_layout.setText(dateAffiche);
 
-        quantite_layout.setText(aliment.getQuantité() + " unite");
+        quantite_layout.setText(aliment.getQuantité() + " "+aliment.getUnite_quantite());
 
 
         //   Log.e("nom de l'aliment", aliment.getNom());
