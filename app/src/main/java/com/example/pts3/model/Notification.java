@@ -20,7 +20,7 @@ public class Notification {
     public List<Aliment> checkForNotif() {
         List<Aliment> lesAliments = new ArrayList<>();
 
-        for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
+        for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
 
             for (Aliment aliment : conteneur.getAliments()) {
                 if (!aliment.getvalidePeremption()) {

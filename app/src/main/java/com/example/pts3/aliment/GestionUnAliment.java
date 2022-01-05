@@ -13,9 +13,9 @@ import com.example.pts3.Frigo;
 import com.example.pts3.R;
 import com.example.pts3.model.Aliment;
 import com.example.pts3.model.Conteneurs;
-import com.example.pts3.model.List_conteneurs;
+import com.example.pts3.model.ListConteneurs;
 
-public class Gestion_UnAliment extends AppCompatActivity {
+public class GestionUnAliment extends AppCompatActivity {
 
 
     private ImageButton supprimer;
@@ -37,7 +37,7 @@ public class Gestion_UnAliment extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
+                for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
                     if (conteneur.isIsvalid() == true) {
                         for (Aliment aliment : conteneur.getAliments()) {
                             if (aliment.getIsvalide() == true) {

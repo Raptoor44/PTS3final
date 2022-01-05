@@ -3,9 +3,9 @@ package com.example.pts3.Conteneur;
 import android.content.Intent;
 import android.widget.Toast;
 
-import com.example.pts3.Mes_conteneurs;
+import com.example.pts3.MesConteneurs;
 import com.example.pts3.model.Conteneurs;
-import com.example.pts3.model.List_conteneurs;
+import com.example.pts3.model.ListConteneurs;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class ValidationConteneur {
@@ -28,7 +28,7 @@ private static ModificationConteneur modificationConteneur;
             isValid = false;
         }
 
-        for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
+        for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
             if (conteneur.getNom().equals(titre_conteneur)) {
              erreur_saisie();
                 isValid = false;
@@ -38,14 +38,14 @@ private static ModificationConteneur modificationConteneur;
 
         if(isValid) {
 
-          for(Conteneurs conteneur : List_conteneurs.getConteneursList()){
+          for(Conteneurs conteneur : ListConteneurs.getConteneursList()){
               if(conteneur.isIsvalid()){
                   conteneur.setNom(titre_conteneur);
               }
           }
 
 
-            Intent intent = new Intent(modificationConteneur.getApplicationContext(), Mes_conteneurs.class);
+            Intent intent = new Intent(modificationConteneur.getApplicationContext(), MesConteneurs.class);
             modificationConteneur.startActivity(intent);
 
         }

@@ -20,12 +20,14 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 
-import com.example.pts3.aliment.Ajouter_a_frigo_general;
-import com.example.pts3.aliment.Gestion_UnAliment;
+import com.example.pts3.aliment.AjouterAFrigoGeneral;
+import com.example.pts3.aliment.GestionUnAliment;
 import com.example.pts3.model.Aliment;
 import com.example.pts3.model.Conteneurs;
-import com.example.pts3.model.Custom_list_aliment;
-import com.example.pts3.model.List_conteneurs;
+
+
+import com.example.pts3.model.CustomListAliment;
+import com.example.pts3.model.ListConteneurs;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -34,7 +36,7 @@ import java.util.Comparator;
 
 public class Frigo extends AppCompatActivity {
 
-    private Custom_list_aliment adapter;
+    private CustomListAliment adapter;
 
     private ListView listView;
 
@@ -54,7 +56,7 @@ public class Frigo extends AppCompatActivity {
 
         Button ajouter_produit = findViewById(R.id.id_activity_frigo_ajouter_produit);
         ajouter_produit.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), Ajouter_a_frigo_general.class);
+            Intent intent = new Intent(getApplicationContext(), AjouterAFrigoGeneral.class);
             startActivity(intent);
             finish();
         });
@@ -72,7 +74,7 @@ public class Frigo extends AppCompatActivity {
             assert listAliment != null;
             Collections.sort(listAliment.getAliments(), ALPHABETICAL_ORDER1);
 
-            adapter = new Custom_list_aliment(getApplicationContext(), listAliment.getAliments());
+            adapter = new CustomListAliment(getApplicationContext(), listAliment.getAliments());
 
             listView.setAdapter(adapter);
 
@@ -92,7 +94,7 @@ public class Frigo extends AppCompatActivity {
 
             Collections.sort(listAliment.getAliments(), TRI_DATE);
 
-            adapter = new Custom_list_aliment(getApplicationContext(), listAliment.getAliments());
+            adapter = new CustomListAliment(getApplicationContext(), listAliment.getAliments());
 
             listView.setAdapter(adapter);
         });
@@ -110,7 +112,6 @@ public class Frigo extends AppCompatActivity {
 
 
         Conteneurs conteneur_ = initConteneur();
-        initAllAliment();
 
 
         Conteneurs finalConteneur_ = conteneur_;
@@ -127,7 +128,7 @@ public class Frigo extends AppCompatActivity {
                         aliment.setIsvalide(true);
                     }
 
-                    Intent intent = new Intent(getApplicationContext(), Gestion_UnAliment.class);
+                    Intent intent = new Intent(getApplicationContext(), GestionUnAliment.class);
                     startActivity(intent);
                     finish();
 
@@ -142,7 +143,7 @@ public class Frigo extends AppCompatActivity {
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Mes_conteneurs.class);
+                Intent intent = new Intent(getApplicationContext(), MesConteneurs.class);
                 startActivity(intent);
                 finish();
             }
@@ -168,7 +169,7 @@ public class Frigo extends AppCompatActivity {
                 }
 
 
-                adapter = new Custom_list_aliment(getApplicationContext(), alimentFiltre);
+                adapter = new CustomListAliment(getApplicationContext(), alimentFiltre);
 
 
                 listView.setAdapter(adapter);
@@ -220,11 +221,14 @@ public class Frigo extends AppCompatActivity {
                 }
             });
         }
+
+        initAllAliment();
+
     }
 
     private void initAllAliment() {
         Conteneurs conteneur_ = initConteneur();
-        adapter = new Custom_list_aliment(getApplicationContext(), conteneur_.getAliments());
+        adapter = new CustomListAliment(getApplicationContext(), conteneur_.getAliments());
 
         listView.setAdapter(adapter);
     }
@@ -233,7 +237,7 @@ public class Frigo extends AppCompatActivity {
     private Conteneurs initConteneur() {
         Conteneurs conteneur_ = null;
 
-        for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
+        for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
             if (conteneur.isIsvalid() == true) {
                 conteneur_ = conteneur;
             }
@@ -249,7 +253,7 @@ public class Frigo extends AppCompatActivity {
     private void _aliment() {
         Aliment aliment = new Aliment("test", 50, "unite", Calendar.getInstance().getTime(), "kg");
 
-        for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
+        for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
             if (conteneur.isIsvalid() == true) {
 
                 aliment.setId(conteneur.getStatic_id_aliment());
@@ -285,9 +289,9 @@ public class Frigo extends AppCompatActivity {
         }
 
         if (checkCategorie.isChecked() == true) {
-            Custom_list_aliment adapt;
+            CustomListAliment adapt;
 
-            adapt = new Custom_list_aliment(getApplicationContext(), alimentFiltre);
+            adapt = new CustomListAliment(getApplicationContext(), alimentFiltre);
 
             listView.setAdapter(adapt);
         }

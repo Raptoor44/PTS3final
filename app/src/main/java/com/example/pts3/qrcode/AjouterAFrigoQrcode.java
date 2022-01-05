@@ -1,13 +1,10 @@
 package com.example.pts3.qrcode;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.Person;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.SyncStatusObserver;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -16,34 +13,27 @@ import android.widget.Button;
 
 import com.example.pts3.R;
 
-import com.example.pts3.aliment.Ajouter_a_frigo_manuel;
-import com.example.pts3.model.List_conteneurs;
+import com.example.pts3.aliment.AjouterAFrigoManuel;
+import com.example.pts3.model.ListConteneurs;
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.HttpEntity;
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.HttpResponse;
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.client.HttpClient;
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.client.entity.UrlEncodedFormEntity;
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.client.methods.HttpGet;
 
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.client.methods.HttpPost;
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.impl.client.DefaultHttpClient;
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.impl.client.HttpClients;
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.message.BasicNameValuePair;
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.util.EntityUtils;
 
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 
-import java.io.BufferedReader;
 import java.io.IOException;
 
 import java.io.InputStream;
-import java.io.InputStreamReader;
 
 
-public class Ajouter_a_frigo_qrcode extends AppCompatActivity {
+public class AjouterAFrigoQrcode extends AppCompatActivity {
 
     private Button scan;
     private String information_scan;
@@ -63,6 +53,13 @@ public class Ajouter_a_frigo_qrcode extends AppCompatActivity {
         }
 
 
+        try {
+            this.uploadToServer("3700496306026");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
 
         this.scan.setOnClickListener(new View.OnClickListener() {
@@ -147,13 +144,17 @@ public class Ajouter_a_frigo_qrcode extends AppCompatActivity {
 
 
                     JSONObject product = result.getJSONObject("product");
-                    Object level = product.get("generic_name_fr");
+                    Object name = product.get("generic_name_fr");
+                    Object categories = product.get("categories");
 
 
-                   Intent intent = new Intent(getApplicationContext(), Ajouter_a_frigo_manuel.class);
+
+
+                   Intent intent = new Intent(getApplicationContext(), AjouterAFrigoManuel.class);
                    startActivity(intent);
 
-                    List_conteneurs.setName(level.toString());
+                    ListConteneurs.setName(name.toString());
+                    ListConteneurs.setCategorie(categories.toString());
 
                    finish();
 

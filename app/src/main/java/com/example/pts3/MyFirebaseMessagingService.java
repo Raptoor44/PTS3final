@@ -10,7 +10,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
-import com.example.pts3.model.List_conteneurs;
+import com.example.pts3.model.ListConteneurs;
 import com.example.pts3.model.Notification;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -27,7 +27,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService{
         Intent intent = new Intent(getApplicationContext(),MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent,0);
 
-        Notification notification = new Notification(List_conteneurs.getConteneursList());
+        Notification notification = new Notification(ListConteneurs.getConteneursList());
         notification.checkForNotif();
         if(notification.isNotifier()){
             myMessasge = notification.getMessage();

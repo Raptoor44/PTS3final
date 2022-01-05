@@ -19,17 +19,15 @@ import com.example.pts3.Frigo;
 import com.example.pts3.R;
 import com.example.pts3.model.Aliment;
 import com.example.pts3.model.Conteneurs;
-import com.example.pts3.model.Custom_list_aliment;
-import com.example.pts3.model.List_conteneurs;
+import com.example.pts3.model.ListConteneurs;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
 
-public class Ajouter_a_frigo_manuel extends AppCompatActivity {
+public class AjouterAFrigoManuel extends AppCompatActivity {
 
     private Button ajouter;
     private TextInputEditText titre;
@@ -50,20 +48,29 @@ public class Ajouter_a_frigo_manuel extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajouter_afrigo_manuel);
 
+
+        //INIT POUR CE QUE L'ON A BESOIN
         this.titre = findViewById(R.id.id_activity_modification_un_aliment_nom);
+        this.categorie = findViewById(R.id.id_activity_modification_un_aliment_categorie);
         //INIT NAME CODE BAR
 
-        if (List_conteneurs.getName() != null) {
-            this.titre.setText(List_conteneurs.getName());
-            List_conteneurs.setName(null);
+        if (ListConteneurs.getName() != null) {
+            this.titre.setText(ListConteneurs.getName());
+            ListConteneurs.setName(null);
+
+            if(ListConteneurs.getCategorie() != null){
+                this.categorie.setText(ListConteneurs.getCategorie());
+                ListConteneurs.setCategorie(null);
+            }
         }
+
 
 
         // INIT RESTE
 
         this.quantite = findViewById(R.id.id_activity_modification_un_aliment_quantite);
         this.date_peremption = findViewById(R.id.id_activity_modification_un_aliment_date_peremption);
-        this.categorie = findViewById(R.id.id_activity_modification_un_aliment_categorie);
+
 
 
         this.ajouter = findViewById(R.id.id_activity_modification_un_aliment_ajouter);
@@ -122,7 +129,7 @@ public class Ajouter_a_frigo_manuel extends AppCompatActivity {
 
                     Toast.makeText(getApplicationContext(), "Erreur, vous avez rentré un nombre trop important de caractères ou vous " +
                             "avez mal saisis la quantite (donné numérique)", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(getApplicationContext(), Ajouter_a_frigo_manuel.class);
+                    Intent intent = new Intent(getApplicationContext(), AjouterAFrigoManuel.class);
                     startActivity(intent);
 
                     finish();
@@ -142,7 +149,7 @@ public class Ajouter_a_frigo_manuel extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Erreur, vous n'avez pas entrez une date valide !, Veuillez recommencer",
                             Toast.LENGTH_LONG).show();
 
-                    Intent intent = new Intent(getApplicationContext(), Ajouter_a_frigo_manuel.class);
+                    Intent intent = new Intent(getApplicationContext(), AjouterAFrigoManuel.class);
                     startActivity(intent);
 
                     finish();
@@ -152,7 +159,7 @@ public class Ajouter_a_frigo_manuel extends AppCompatActivity {
 
                 if (valide == true && valide2_ == true && isValid3 == true) {
                     Aliment aliment = new Aliment(titre.getText().toString(), quantite_, categorie.getText().toString(), date, uniteQuantite);
-                    for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
+                    for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
                         if (conteneur.isIsvalid() == true) {
 
                             aliment.setId(conteneur.getStatic_id_aliment());

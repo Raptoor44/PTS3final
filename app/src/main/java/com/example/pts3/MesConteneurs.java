@@ -1,6 +1,6 @@
 package com.example.pts3;
 
-import static com.example.pts3.model.List_conteneurs.conteneursList;
+import static com.example.pts3.model.ListConteneurs.conteneursList;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,10 +14,10 @@ import android.widget.ListView;
 
 import com.example.pts3.Conteneur.Creer_conteneur;
 import com.example.pts3.model.Conteneurs;
-import com.example.pts3.model.Custom_list_conteneurs;
-import com.example.pts3.model.List_conteneurs;
+import com.example.pts3.model.CustomListConteneurs;
+import com.example.pts3.model.ListConteneurs;
 
-public class Mes_conteneurs extends AppCompatActivity {
+public class MesConteneurs extends AppCompatActivity {
 
     private ImageButton fleche_retour;
     private Button ajouter;
@@ -36,7 +36,7 @@ public class Mes_conteneurs extends AppCompatActivity {
         final ListView listView = (ListView) findViewById(R.id.id_activity_mes_conteneurs_list_view);
 
 
-        Custom_list_conteneurs adapter = new Custom_list_conteneurs(this.getApplicationContext(), conteneursList );
+        CustomListConteneurs adapter = new CustomListConteneurs(this.getApplicationContext(), conteneursList );
 
         listView.setAdapter(adapter);
 
@@ -45,7 +45,7 @@ public class Mes_conteneurs extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), Frigo.class);
             startActivity(intent);
 
-            for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
+            for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
 
                 if (conteneur.getUni_id() == position) {
                     conteneur.setIsvalid(true);
@@ -81,7 +81,7 @@ public class Mes_conteneurs extends AppCompatActivity {
     }
 
     private void descative_all_conteneurs(){
-        for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
+        for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
             conteneur.setIsvalid(false);
         }
     }

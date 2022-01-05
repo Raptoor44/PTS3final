@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".qrcode.Ajouter_a_frigo_qrcode">
+    tools:context=".qrcode.AjouterAFrigoQrcode">
 
     <FrameLayout
         android:id="@+id/frameLayout9"
@@ -26,7 +26,21 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"/>
+                android:layout_height="200dp">
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/fleche_retour" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"></LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/id__activity_ajouter_afrigo_qrcode_scanner"

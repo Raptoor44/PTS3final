@@ -27,7 +27,7 @@ public class Creer_nouvelle_liste extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //code à compléter
-                Intent intent = new Intent(getApplicationContext(), Mes_listes.class);
+                Intent intent = new Intent(getApplicationContext(), MesListes.class);
                 startActivity(intent);
 
 
@@ -39,7 +39,7 @@ public class Creer_nouvelle_liste extends AppCompatActivity {
         this.boutton_retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Mes_listes.class);
+                Intent intent = new Intent(getApplicationContext(), MesListes.class);
                 startActivity(intent);
             }
         });

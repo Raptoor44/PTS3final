@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.pts3.Mes_conteneurs;
+import com.example.pts3.MesConteneurs;
 import com.example.pts3.R;
 import com.example.pts3.model.Conteneurs;
-import com.example.pts3.model.List_conteneurs;
+import com.example.pts3.model.ListConteneurs;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class Creer_conteneur extends AppCompatActivity {
@@ -42,7 +42,7 @@ public class Creer_conteneur extends AppCompatActivity {
                     isValid = false;
                 }
 
-                for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
+                for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
                     if (conteneur.getNom().equals(titre_conteneur)) {
                         erreur_saisie();
                         isValid = false;
@@ -52,10 +52,10 @@ public class Creer_conteneur extends AppCompatActivity {
 
                 if(isValid) {
 
-                    List_conteneurs.getConteneursList().add(new Conteneurs(titre_conteneur));
+                    ListConteneurs.getConteneursList().add(new Conteneurs(titre_conteneur));
 
 
-                    Intent intent = new Intent(getApplicationContext(), Mes_conteneurs.class);
+                    Intent intent = new Intent(getApplicationContext(), MesConteneurs.class);
                     startActivity(intent);
 
                 }

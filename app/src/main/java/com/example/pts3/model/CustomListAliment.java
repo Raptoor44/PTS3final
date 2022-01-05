@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Custom_list_aliment extends BaseAdapter  {
+public class CustomListAliment extends BaseAdapter  {
 
 
     private ArrayList<Aliment> listData;
@@ -32,14 +32,14 @@ public class Custom_list_aliment extends BaseAdapter  {
     private ArrayList<Aliment> mDisplayedValues;
     private ArrayList<Aliment> mOriginalValues;
 
-    public Custom_list_aliment(ArrayList<Aliment> listData, LayoutInflater layoutInflater, Context context) {
+    public CustomListAliment(ArrayList<Aliment> listData, LayoutInflater layoutInflater, Context context) {
         this.listData = listData;
         this.layoutInflater = layoutInflater;
         this.context = context;
     }
 
 
-    public Custom_list_aliment(Context applicationContext, ArrayList<Aliment> listData) {
+    public CustomListAliment(Context applicationContext, ArrayList<Aliment> listData) {
         this.context = applicationContext;
         this.listData = listData;
         layoutInflater = LayoutInflater.from(applicationContext);

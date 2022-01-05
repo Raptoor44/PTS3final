@@ -30,7 +30,16 @@ public class Aliment {
         this.unite_quantite = unite_quantite;
 
     }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public Aliment(String nom , Date date_peremption) {
+        this.nom = nom;
+        this.quantité = 1;
+        this.unite_quantite = " " ;
+        this.date_peremption = date_peremption;
+        this.date_ajout = LocalDateTime.now();
 
+
+    }
     public String getNom() {
         return nom;
     }

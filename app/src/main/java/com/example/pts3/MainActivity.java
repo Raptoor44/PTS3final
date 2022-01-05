@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             mes_conteneurs.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(getApplicationContext(), Mes_conteneurs.class);
+                    Intent intent = new Intent(getApplicationContext(), MesConteneurs.class);
                     startActivity(intent);
 
                 }
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             ma_liste_de_cources.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(getApplicationContext(), Mes_listes.class);
+                    Intent intent = new Intent(getApplicationContext(), MesListes.class);
                     startActivity(intent);
                 }
             });

@@ -1,11 +1,9 @@
 package com.example.pts3.aliment;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,7 +18,7 @@ import com.example.pts3.Frigo;
 import com.example.pts3.R;
 import com.example.pts3.model.Aliment;
 import com.example.pts3.model.Conteneurs;
-import com.example.pts3.model.List_conteneurs;
+import com.example.pts3.model.ListConteneurs;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.DateFormat;
@@ -100,7 +98,7 @@ public class ModificationUnAliment extends AppCompatActivity {
 
 
 
-        for (Conteneurs conteneur_ : List_conteneurs.getConteneursList()) {
+        for (Conteneurs conteneur_ : ListConteneurs.getConteneursList()) {
             if (conteneur_.isIsvalid()) {
                 for (Aliment aliment : conteneur_.getAliments()) {
                     if (aliment.getIsvalide()) {
@@ -140,7 +138,7 @@ public class ModificationUnAliment extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), "Erreur, vous avez rentré un nombre trop important de caractères ou vous " +
                         "avez mal saisis la quantite (donné numérique)", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getApplicationContext(), Ajouter_a_frigo_manuel.class);
+                Intent intent = new Intent(getApplicationContext(), AjouterAFrigoManuel.class);
                 startActivity(intent);
 
                 finish();
@@ -160,7 +158,7 @@ public class ModificationUnAliment extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Erreur, vous n'avez pas entrez une date valide !, Veuillez recommencer",
                         Toast.LENGTH_LONG).show();
 
-                Intent intent = new Intent(getApplicationContext(), Ajouter_a_frigo_manuel.class);
+                Intent intent = new Intent(getApplicationContext(), AjouterAFrigoManuel.class);
                 startActivity(intent);
 
                 finish();
@@ -170,7 +168,7 @@ public class ModificationUnAliment extends AppCompatActivity {
 
             if (valide && valide2_ == true && isValid3 == true) {
 
-                for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
+                for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
                     if (conteneur.isIsvalid()) {
 
                         for (Aliment aliment : conteneur.getAliments()) {
@@ -201,7 +199,7 @@ public class ModificationUnAliment extends AppCompatActivity {
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Gestion_UnAliment.class);
+                Intent intent = new Intent(getApplicationContext(), GestionUnAliment.class);
                 startActivity(intent);
                 finish();
             }

@@ -12,19 +12,18 @@ import android.widget.TextView;
 import com.example.pts3.Activity_static.MainActivity_static;
 import com.example.pts3.Conteneur.Gestion_unConteneur;
 import com.example.pts3.Frigo;
-import com.example.pts3.Mes_conteneurs;
 import com.example.pts3.R;
 
 import java.util.List;
 
-public class Custom_list_conteneurs extends BaseAdapter {
+public class CustomListConteneurs extends BaseAdapter {
 
 
     private List<Conteneurs> listData;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public Custom_list_conteneurs(Context applicationContext, List<Conteneurs> conteneursList) {
+    public CustomListConteneurs(Context applicationContext, List<Conteneurs> conteneursList) {
         this.context = applicationContext;
         this.listData = conteneursList;
         layoutInflater = LayoutInflater.from(applicationContext);
@@ -61,7 +60,7 @@ public class Custom_list_conteneurs extends BaseAdapter {
             @Override
             public void onClick(View view) {
 
-                for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
+                for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
                     if (position == conteneur.getUni_id()) {
                         conteneur.setIsvalid(true);
                     }
@@ -77,7 +76,7 @@ public class Custom_list_conteneurs extends BaseAdapter {
         acceder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
+                for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
                     if (position == conteneur.getUni_id()) {
                         conteneur.setIsvalid(true);
                     }

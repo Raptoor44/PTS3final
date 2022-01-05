@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.pts3.Mes_conteneurs;
+import com.example.pts3.MesConteneurs;
 import com.example.pts3.R;
 import com.example.pts3.model.Conteneurs;
-import com.example.pts3.model.List_conteneurs;
+import com.example.pts3.model.ListConteneurs;
 
 public class Gestion_unConteneur extends AppCompatActivity {
 
@@ -36,13 +36,13 @@ public class Gestion_unConteneur extends AppCompatActivity {
         this.supprimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for(Conteneurs conteneur : List_conteneurs.getConteneursList()){
+                for(Conteneurs conteneur : ListConteneurs.getConteneursList()){
                     if(conteneur.isIsvalid() == true){
-                        List_conteneurs.getConteneursList().remove(conteneur);
+                        ListConteneurs.getConteneursList().remove(conteneur);
 
                         Conteneurs.setId(Conteneurs.getId()-1);
 
-                        Intent intent = new Intent (getApplicationContext(), Mes_conteneurs.class);
+                        Intent intent = new Intent (getApplicationContext(), MesConteneurs.class);
                         startActivity(intent);
                     }
                 }
