@@ -34,17 +34,9 @@ import java.util.Comparator;
 
 public class Frigo extends AppCompatActivity {
 
-    private ImageButton retour;
-    private Button ajouter_produit;
-    private Button tri_ordre_alpha;
-    private Button tri_ordre_date;
-
     private Custom_list_aliment adapter;
 
-    private EditText etSearch;
     private ListView listView;
-
-    private Spinner spinner;
 
 
     private CheckBox checkCategorie;
@@ -55,62 +47,54 @@ public class Frigo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frigo);
 
-        etSearch = (EditText) findViewById(R.id.id_activity_frigo_searchView);
+        EditText etSearch = (EditText) findViewById(R.id.id_activity_frigo_searchView);
         listView = findViewById(R.id.id_activity_frigo_listview_aliment);
 
         this.checkCategorie = findViewById(R.id.id_activity_frigo_recherche_categorie);
 
-        this.ajouter_produit = findViewById(R.id.id_activity_frigo_ajouter_produit);
-        this.ajouter_produit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Ajouter_a_frigo_general.class);
-                startActivity(intent);
-                finish();
-            }
+        Button ajouter_produit = findViewById(R.id.id_activity_frigo_ajouter_produit);
+        ajouter_produit.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), Ajouter_a_frigo_general.class);
+            startActivity(intent);
+            finish();
         });
 
 
-        this.tri_ordre_alpha = findViewById(R.id.id_activity_frigo_tri_ordre_alphabetique);
-        this.tri_ordre_alpha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Conteneurs conteneur_ = initConteneur();
+        Button tri_ordre_alpha = findViewById(R.id.id_activity_frigo_tri_ordre_alphabetique);
+        tri_ordre_alpha.setOnClickListener(view -> {
+            Conteneurs conteneur_ = initConteneur();
 
-                Conteneurs listAliment;
+            Conteneurs listAliment;
 
-                listAliment = conteneur_;
+            listAliment = conteneur_;
 
 
-                Collections.sort(listAliment.getAliments(), ALPHABETICAL_ORDER1);
+            assert listAliment != null;
+            Collections.sort(listAliment.getAliments(), ALPHABETICAL_ORDER1);
 
-                adapter = new Custom_list_aliment(getApplicationContext(), listAliment.getAliments());
+            adapter = new Custom_list_aliment(getApplicationContext(), listAliment.getAliments());
 
-                listView.setAdapter(adapter);
+            listView.setAdapter(adapter);
 
 
-            }
         });
 
 
-        this.tri_ordre_date = findViewById(R.id.id_activity_frigo_tri_par_date);
+        Button tri_ordre_date = findViewById(R.id.id_activity_frigo_tri_par_date);
 
-        this.tri_ordre_date.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Conteneurs conteneur_ = initConteneur();
+        tri_ordre_date.setOnClickListener(view -> {
+            Conteneurs conteneur_ = initConteneur();
 
-                Conteneurs listAliment;
+            Conteneurs listAliment;
 
-                listAliment = conteneur_;
+            listAliment = conteneur_;
 
 
-                Collections.sort(listAliment.getAliments(), TRI_DATE);
+            Collections.sort(listAliment.getAliments(), TRI_DATE);
 
-                adapter = new Custom_list_aliment(getApplicationContext(), listAliment.getAliments());
+            adapter = new Custom_list_aliment(getApplicationContext(), listAliment.getAliments());
 
-                listView.setAdapter(adapter);
-            }
+            listView.setAdapter(adapter);
         });
 
 
@@ -153,9 +137,9 @@ public class Frigo extends AppCompatActivity {
         });
 
 
-        this.retour = findViewById(R.id.id_activity_frigo_boutton_retour);
+        ImageButton retour = findViewById(R.id.id_activity_frigo_boutton_retour);
 
-        this.retour.setOnClickListener(new View.OnClickListener() {
+        retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Mes_conteneurs.class);
@@ -214,12 +198,12 @@ public class Frigo extends AppCompatActivity {
             // Layout for All ROWs of Spinner.  (Optional for ArrayAdapter).
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-            this.spinner = (Spinner) findViewById(R.id.id_activity_frigo_spinner);
+            Spinner spinner = (Spinner) findViewById(R.id.id_activity_frigo_spinner);
 
-            this.spinner.setAdapter(adapter);
+            spinner.setAdapter(adapter);
 
             // When user select a List-Item.
-            this.spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

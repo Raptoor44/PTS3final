@@ -91,4 +91,15 @@ public class Aliment {
     public void setCategorie(String categorie) {
         this.categorie = categorie;
     }
+
+    public Boolean getvalidePeremption() {
+        Date dateDuJour = new Date(System.currentTimeMillis());
+        if(date_peremption.after(dateDuJour)){
+            setIsvalide(false);
+        }
+        else{
+            setIsvalide(true);
+        }
+        return isvalide;
+    }
 }

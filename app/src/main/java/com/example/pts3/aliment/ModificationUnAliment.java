@@ -3,6 +3,7 @@ package com.example.pts3.aliment;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -38,15 +39,11 @@ public class ModificationUnAliment extends AppCompatActivity {
     private TextInputEditText categorie;
 
 
-    private Button ajouter;
-    private ImageButton retour;
-
-    private Spinner spinner;
-
     private String uniteQuantite;
     private LinkedList<String> listUnite;
     private boolean isValid3 = false;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,20 +56,21 @@ public class ModificationUnAliment extends AppCompatActivity {
         categorie = findViewById(R.id.id_activity_modification_un_aliment_categorie);
 
 
-        ajouter = findViewById(R.id.id_activity_modification_un_aliment_ajouter);
+        Button ajouter = findViewById(R.id.id_activity_modification_un_aliment_ajouter);
 
 
-        this.spinner = findViewById(R.id.id_activity_ajouter_afrigo_manuel_spinner);
+        Spinner spinner = findViewById(R.id.id_activity_ajouter_afrigo_manuel_spinner);
 
-        listUnite = new LinkedList<String>();
+        listUnite = new LinkedList<>();
 
         listUnite.add("kg");
         listUnite.add("g");
         listUnite.add("unite");
         listUnite.add("ml");
         listUnite.add("mg");
+        listUnite.add("L");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, listUnite
         );
 
@@ -80,9 +78,9 @@ public class ModificationUnAliment extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 
-        this.spinner.setAdapter(adapter);
+        spinner.setAdapter(adapter);
 
-        this.spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -103,16 +101,16 @@ public class ModificationUnAliment extends AppCompatActivity {
 
 
         for (Conteneurs conteneur_ : List_conteneurs.getConteneursList()) {
-            if (conteneur_.isIsvalid() == true) {
+            if (conteneur_.isIsvalid()) {
                 for (Aliment aliment : conteneur_.getAliments()) {
-                    if (aliment.getIsvalide() == true) {
+                    if (aliment.getIsvalide()) {
 
 
                         titre.setText(aliment.getNom());
                         quantite.setText(aliment.getQuantité() + "");
 
                         /////////
-                        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                        @SuppressLint("SimpleDateFormat") DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
                         String dateAffiche = formatter.format(aliment.getDate_peremption());
 
@@ -131,80 +129,76 @@ public class ModificationUnAliment extends AppCompatActivity {
             }
 
         }
-        this.ajouter.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onClick(View view) {
+        ajouter.setOnClickListener(view -> {
 
-                int quantite_ = 0;
-                boolean valide = false;
-                try {
-                    quantite_ = Integer.parseInt(quantite.getText().toString());
-                    valide = true;
-                } catch (NumberFormatException e) {
+            int quantite_ = 0;
+            boolean valide = false;
+            try {
+                quantite_ = Integer.parseInt(quantite.getText().toString());
+                valide = true;
+            } catch (NumberFormatException e) {
 
-                    Toast.makeText(getApplicationContext(), "Erreur, vous avez rentré un nombre trop important de caractères ou vous " +
-                            "avez mal saisis la quantite (donné numérique)", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(getApplicationContext(), Ajouter_a_frigo_manuel.class);
-                    startActivity(intent);
+                Toast.makeText(getApplicationContext(), "Erreur, vous avez rentré un nombre trop important de caractères ou vous " +
+                        "avez mal saisis la quantite (donné numérique)", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getApplicationContext(), Ajouter_a_frigo_manuel.class);
+                startActivity(intent);
 
-                    finish();
+                finish();
 
-                }
+            }
 
-                Date date = null;
-                boolean valide2_ = false;
+            Date date = null;
+            boolean valide2_ = false;
 
-                try {
-                    date = new SimpleDateFormat("dd/MM/yyyy").parse(date_input.getText().toString());
-                    valide2_ = true;
+            try {
+                date = new SimpleDateFormat("dd/MM/yyyy").parse(date_input.getText().toString());
+                valide2_ = true;
 
 
-                    Log.e("La date : ", date.toString());
-                } catch (ParseException e) {
-                    Toast.makeText(getApplicationContext(), "Erreur, vous n'avez pas entrez une date valide !, Veuillez recommencer",
-                            Toast.LENGTH_LONG).show();
+                Log.e("La date : ", date.toString());
+            } catch (ParseException e) {
+                Toast.makeText(getApplicationContext(), "Erreur, vous n'avez pas entrez une date valide !, Veuillez recommencer",
+                        Toast.LENGTH_LONG).show();
 
-                    Intent intent = new Intent(getApplicationContext(), Ajouter_a_frigo_manuel.class);
-                    startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), Ajouter_a_frigo_manuel.class);
+                startActivity(intent);
 
-                    finish();
+                finish();
 
-                }
+            }
 
 
-                if (valide == true && valide2_ == true && isValid3 == true) {
+            if (valide && valide2_ == true && isValid3 == true) {
 
-                    for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
-                        if (conteneur.isIsvalid() == true) {
+                for (Conteneurs conteneur : List_conteneurs.getConteneursList()) {
+                    if (conteneur.isIsvalid()) {
 
-                            for (Aliment aliment : conteneur.getAliments()) {
+                        for (Aliment aliment : conteneur.getAliments()) {
 
-                                if (aliment.getIsvalide()) {
-                                    aliment.setId(conteneur.getStatic_id_aliment());
-                                    conteneur.setStatic_id_aliment(conteneur.getStatic_id_aliment() + 1);
+                            if (aliment.getIsvalide()) {
+                                aliment.setId(conteneur.getStatic_id_aliment());
+                                conteneur.setStatic_id_aliment(conteneur.getStatic_id_aliment() + 1);
 
-                                    aliment.setCategorie(categorie.getText().toString());
-                                    aliment.setNom(titre.getText().toString());
-                                    aliment.setQuantité(quantite_);
-                                    aliment.setDate_peremption(date);
-                                    aliment.setUnite_quantite(uniteQuantite);
-                                }
+                                aliment.setCategorie(categorie.getText().toString());
+                                aliment.setNom(titre.getText().toString());
+                                aliment.setQuantité(quantite_);
+                                aliment.setDate_peremption(date);
+                                aliment.setUnite_quantite(uniteQuantite);
                             }
                         }
                     }
-
-                    Intent intent = new Intent(getApplicationContext(), Frigo.class);
-                    startActivity(intent);
-                    finish();
                 }
+
+                Intent intent = new Intent(getApplicationContext(), Frigo.class);
+                startActivity(intent);
+                finish();
             }
         });
 
 
-        this.retour = findViewById(R.id.id_activity_ajouter_afrigo_manuel_retour);
+        ImageButton retour = findViewById(R.id.id_activity_ajouter_afrigo_manuel_retour);
 
-        this.retour.setOnClickListener(new View.OnClickListener() {
+        retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Gestion_UnAliment.class);

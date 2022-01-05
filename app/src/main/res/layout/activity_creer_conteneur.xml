@@ -23,13 +23,13 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/id_activity_creer_conteneur_text_input"
-                    android:layout_width="match_parent"
+                    android:layout_width="314dp"
                     android:layout_height="wrap_content"
                     android:hint="Nom du conteneur" />
 
                 <Button
                     android:id="@+id/id_activity_creer_conteneur_bouton_creer_conteneur"
-                    android:layout_width="match_parent"
+                    android:layout_width="315dp"
                     android:layout_height="wrap_content"
                     android:text="ajouter" />
             </com.google.android.material.textfield.TextInputLayout>

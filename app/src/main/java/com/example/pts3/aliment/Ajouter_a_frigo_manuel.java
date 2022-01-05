@@ -79,6 +79,7 @@ public class Ajouter_a_frigo_manuel extends AppCompatActivity {
         listUnite.add("unite");
         listUnite.add("ml");
         listUnite.add("mg");
+        listUnite.add("L");
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, listUnite

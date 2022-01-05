@@ -48,18 +48,19 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
-            android:layout_width="354dp"
-            android:layout_height="wrap_content"/>
+            android:layout_width="270dp"
+            android:layout_height="2dp" />
 
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/id_activity_main_engrenage_paramètres"
-                android:layout_width="56dp"
-                android:layout_height="57dp"
-                android:src="@drawable/index" />
         </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/id_activity_main_engrenage_paramètres"
+            android:layout_width="56dp"
+            android:layout_height="57dp"
+            android:src="@drawable/index" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
