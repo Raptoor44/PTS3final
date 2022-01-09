@@ -13,7 +13,12 @@ import android.widget.ListView;
 
 import com.example.pts3.model.CustomListConteneurs;
 import com.example.pts3.model.CustomListRecettes;
+import com.example.pts3.model.Recette;
 import com.example.pts3.model.Recettes;
+import com.example.pts3.outils.Serializer;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class Idee_recettes extends AppCompatActivity {
 
@@ -27,6 +32,16 @@ public class Idee_recettes extends AppCompatActivity {
         setContentView(R.layout.activity_idee_recettes);
 
         this.boutton_retour = findViewById(R.id.id_activity_frigo_boutton_retour);
+
+
+        List<Recette> recettesList = new LinkedList<Recette>();
+        recettesList = (List<Recette>) Serializer.deSerialize("recettes", getApplicationContext());
+
+        if (recettesList != null) {
+            Recettes.setRecettes(recettesList);
+
+        }
+
 
         this.boutton_retour.setOnClickListener(new View.OnClickListener() {
             @Override

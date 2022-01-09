@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.example.pts3.model.Recette;
 import com.example.pts3.model.Recettes;
+import com.example.pts3.outils.Serializer;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class AjouterRecette extends AppCompatActivity {
@@ -37,7 +38,7 @@ public class AjouterRecette extends AppCompatActivity {
                     Recette recette = new Recette(nom.getText().toString(), detaille.getText().toString());
 
                     Recettes.getRecettes().add(recette);
-
+                    Serializer.serialize("recettes", Recettes.getRecettes(), getApplicationContext());
                     Intent intent = new Intent(getApplicationContext(), Idee_recettes.class);
                     startActivity(intent);
                     finish();

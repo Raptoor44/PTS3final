@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.pts3.Activity_static.MainActivity_static;
 import com.example.pts3.Idee_recettes;
 import com.example.pts3.R;
+import com.example.pts3.outils.Serializer;
 
 import java.util.List;
 
@@ -70,6 +71,7 @@ public class CustomListRecettes extends BaseAdapter {
                 }
                 Intent intent = new Intent(MainActivity_static.getMain(), Idee_recettes.class);
                 MainActivity_static.getMain().startActivity(intent);
+                Serializer.serialize("recettes", Recettes.getRecettes(), MainActivity_static.getMain().getApplicationContext());
                 MainActivity_static.getMain().finish();
 
             }

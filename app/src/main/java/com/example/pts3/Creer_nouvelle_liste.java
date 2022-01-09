@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.example.pts3.model.ListConteneurs;
+import com.example.pts3.model.Recettes;
+import com.example.pts3.outils.Serializer;
+
 public class Creer_nouvelle_liste extends AppCompatActivity {
 
 
@@ -28,8 +32,9 @@ public class Creer_nouvelle_liste extends AppCompatActivity {
             public void onClick(View view) {
                 //code à compléter
                 Intent intent = new Intent(getApplicationContext(), MesListes.class);
-                startActivity(intent);
 
+                startActivity(intent);
+                finish();
 
             }
         });

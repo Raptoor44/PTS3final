@@ -1,6 +1,10 @@
 package com.example.pts3.model;
 
-public class Recette {
+import com.example.pts3.outils.Serializer;
+
+import java.io.Serializable;
+
+public class Recette implements Serializable {
 
 
     private String nom;
