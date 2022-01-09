@@ -19,6 +19,7 @@ import com.example.pts3.R;
 import com.example.pts3.model.Aliment;
 import com.example.pts3.model.Conteneurs;
 import com.example.pts3.model.ListConteneurs;
+import com.example.pts3.outils.Serializer;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.DateFormat;
@@ -94,8 +95,6 @@ public class ModificationUnAliment extends AppCompatActivity {
 
             }
         });
-
-
 
 
         for (Conteneurs conteneur_ : ListConteneurs.getConteneursList()) {
@@ -182,6 +181,7 @@ public class ModificationUnAliment extends AppCompatActivity {
                                 aliment.setQuantité(quantite_);
                                 aliment.setDate_peremption(date);
                                 aliment.setUnite_quantite(uniteQuantite);
+                                Serializer.serialize("file", ListConteneurs.getConteneursList(), getApplicationContext());
                             }
                         }
                     }

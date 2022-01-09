@@ -36,12 +36,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <Button
-            android:id="@+id/button9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Notifications" />
-
-        <Button
             android:id="@+id/id_activity_parametres_boutton_accessibilité"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

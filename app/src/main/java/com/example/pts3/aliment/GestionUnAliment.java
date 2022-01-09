@@ -14,6 +14,7 @@ import com.example.pts3.R;
 import com.example.pts3.model.Aliment;
 import com.example.pts3.model.Conteneurs;
 import com.example.pts3.model.ListConteneurs;
+import com.example.pts3.outils.Serializer;
 
 public class GestionUnAliment extends AppCompatActivity {
 
@@ -39,28 +40,28 @@ public class GestionUnAliment extends AppCompatActivity {
 
                 for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
                     if (conteneur.isIsvalid() == true) {
-                        for (Aliment aliment : conteneur.getAliments()) {
-                            if (aliment.getIsvalide() == true) {
-                                conteneur.getAliments().remove(aliment);
+                        for (int i = 0; i < conteneur.getAliments().size(); i++) {
+
+                            if (conteneur.getAliments().get(i).getIsvalide() == true) {
+                                conteneur.getAliments().remove(i);
                                 conteneur.setStatic_id_aliment(conteneur.getStatic_id_aliment() - 1);
-
-
+                                Serializer.serialize("file", ListConteneurs.getConteneursList(), getApplicationContext());
 
                                 Intent intent = new Intent(getApplicationContext(), Frigo.class);
                                 startActivity(intent);
                                 finish();
+
                             }
                         }
-
-
                     }
+
 
                 }
 
-
             }
-        });
 
+
+        });
 
 
         this.modifier_produit = findViewById(R.id.id_activity_gestion_un_aliment_modifier_le_produit);
@@ -70,7 +71,7 @@ public class GestionUnAliment extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ModificationUnAliment.class);
                 startActivity(intent);
-
+                Serializer.serialize("file", ListConteneurs.getConteneursList(), getApplicationContext());
                 finish();
             }
         });

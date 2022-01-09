@@ -1,36 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pts3">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Design"
-        >
+        android:theme="@style/Theme.Design">
+        <activity
+            android:name=".AjouterRecette"
+            android:exported="false" />
         <activity
             android:name=".Conteneur.ModificationConteneur"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".aliment.ModificationUnAliment"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Conteneur.Gestion_unConteneur"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".aliment.GestionUnAliment"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".qrcode.AjouterAFrigoQrcode"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Conteneur.Creer_conteneur"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".aliment.AjouterAFrigoGeneral"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".aliment.AjouterAFrigoManuel"
             android:exported="true" />

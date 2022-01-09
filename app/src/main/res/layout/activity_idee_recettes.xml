@@ -25,7 +25,7 @@
     </FrameLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/id_activity_idee_recettes_ajouter"
         android:layout_width="165dp"
         android:layout_height="105dp"
         android:layout_marginBottom="28dp"
@@ -37,8 +37,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="351dp"
+        android:layout_height="465dp"
         android:layout_marginTop="137dp"
         android:layout_marginBottom="157dp"
         android:orientation="vertical"
@@ -48,9 +48,9 @@
         app:layout_constraintTop_toBottomOf="@+id/frameLayout6">
 
         <ListView
+            android:id="@+id/id_activity_idee_recettes_listView"
             android:layout_width="match_parent"
-            android:layout_height="468dp" />
-
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

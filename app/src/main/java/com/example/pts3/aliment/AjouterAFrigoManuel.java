@@ -20,6 +20,7 @@ import com.example.pts3.R;
 import com.example.pts3.model.Aliment;
 import com.example.pts3.model.Conteneurs;
 import com.example.pts3.model.ListConteneurs;
+import com.example.pts3.outils.Serializer;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.ParseException;
@@ -58,19 +59,14 @@ public class AjouterAFrigoManuel extends AppCompatActivity {
             this.titre.setText(ListConteneurs.getName());
             ListConteneurs.setName(null);
 
-            if(ListConteneurs.getCategorie() != null){
-                this.categorie.setText(ListConteneurs.getCategorie());
-                ListConteneurs.setCategorie(null);
-            }
-        }
 
+        }
 
 
         // INIT RESTE
 
         this.quantite = findViewById(R.id.id_activity_modification_un_aliment_quantite);
         this.date_peremption = findViewById(R.id.id_activity_modification_un_aliment_date_peremption);
-
 
 
         this.ajouter = findViewById(R.id.id_activity_modification_un_aliment_ajouter);
@@ -168,7 +164,7 @@ public class AjouterAFrigoManuel extends AppCompatActivity {
 
                         }
                     }
-
+                    Serializer.serialize("file", ListConteneurs.getConteneursList(), getApplicationContext());
                     Intent intent = new Intent(getApplicationContext(), Frigo.class);
                     startActivity(intent);
                     finish();

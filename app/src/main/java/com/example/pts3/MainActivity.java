@@ -9,12 +9,17 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.pts3.Activity_static.MainActivity_static;
+import com.example.pts3.model.Conteneurs;
+import com.example.pts3.model.ListConteneurs;
+import com.example.pts3.outils.Serializer;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
 
     private Button mes_conteneurs;
-    private Button ma_liste_de_cources;
     private Button idees_recettes;
 
     private ImageButton engrenage;
@@ -28,44 +33,46 @@ public class MainActivity extends AppCompatActivity {
         MainActivity_static.setMain(this);
 
 
+        mes_conteneurs = findViewById(R.id.id_activity_main_mes_conteneurs);
 
-            mes_conteneurs = findViewById(R.id.id_activity_main_mes_conteneurs);
-            ma_liste_de_cources = findViewById(R.id.id_activity_main_ma_liste_de_courses);
-            idees_recettes = findViewById(R.id.id_activity_main_idee_recettes);
-            engrenage = findViewById(R.id.id_activity_main_engrenage_paramètres);
+        idees_recettes = findViewById(R.id.id_activity_main_idee_recettes);
+        engrenage = findViewById(R.id.id_activity_main_engrenage_paramètres);
 
-            mes_conteneurs.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getApplicationContext(), MesConteneurs.class);
-                    startActivity(intent);
 
-                }
-            });
+        List<Conteneurs> permute = new LinkedList<Conteneurs>();
 
-            ma_liste_de_cources.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getApplicationContext(), MesListes.class);
-                    startActivity(intent);
-                }
-            });
+        permute = (List<Conteneurs>) Serializer.deSerialize("file", getApplicationContext());
 
-            idees_recettes.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getApplicationContext(), Idee_recettes.class);
-                    startActivity(intent);
-                }
-            });
+        if (permute != null) {
+            ListConteneurs.setConteneursList(permute);
+        }
 
-            this.engrenage.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getApplicationContext(), Parametres.class);
-                    startActivity(intent);
-                }
-            });
+
+        mes_conteneurs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MesConteneurs.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+        idees_recettes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Idee_recettes.class);
+                startActivity(intent);
+            }
+        });
+
+        this.engrenage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Parametres.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

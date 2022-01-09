@@ -10,10 +10,9 @@ import com.google.android.material.textfield.TextInputEditText;
 
 public class ValidationConteneur {
 
-private static ModificationConteneur modificationConteneur;
+    private static ModificationConteneur modificationConteneur;
 
     public static void extracted(ModificationConteneur modificationConteneur, TextInputEditText nom) {
-
 
 
         modificationConteneur = modificationConteneur;
@@ -24,25 +23,26 @@ private static ModificationConteneur modificationConteneur;
         boolean isValid = true;
 
         if (titre_conteneur.equals("")) {
-         erreur_saisie();
+            erreur_saisie();
             isValid = false;
         }
 
         for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
             if (conteneur.getNom().equals(titre_conteneur)) {
-             erreur_saisie();
+                erreur_saisie();
                 isValid = false;
 
             }
         }
 
-        if(isValid) {
+        if (isValid) {
 
-          for(Conteneurs conteneur : ListConteneurs.getConteneursList()){
-              if(conteneur.isIsvalid()){
-                  conteneur.setNom(titre_conteneur);
-              }
-          }
+            for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
+                if (conteneur.isIsvalid()) {
+                    conteneur.setNom(titre_conteneur);
+
+                }
+            }
 
 
             Intent intent = new Intent(modificationConteneur.getApplicationContext(), MesConteneurs.class);

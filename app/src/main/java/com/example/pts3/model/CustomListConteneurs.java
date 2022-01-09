@@ -13,6 +13,7 @@ import com.example.pts3.Activity_static.MainActivity_static;
 import com.example.pts3.Conteneur.Gestion_unConteneur;
 import com.example.pts3.Frigo;
 import com.example.pts3.R;
+import com.example.pts3.outils.Serializer;
 
 import java.util.List;
 
@@ -67,6 +68,8 @@ public class CustomListConteneurs extends BaseAdapter {
                 }
                 Intent intent = new Intent(MainActivity_static.getMain().getApplicationContext(), Gestion_unConteneur.class);
                 MainActivity_static.getMain().startActivity(intent);
+                Serializer.serialize("file", ListConteneurs.getConteneursList(), MainActivity_static.getMain().getApplicationContext());
+                MainActivity_static.getMain().finish();
 
 
             }

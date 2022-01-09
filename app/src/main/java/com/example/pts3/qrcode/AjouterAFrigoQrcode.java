@@ -52,7 +52,7 @@ public class AjouterAFrigoQrcode extends AppCompatActivity {
             StrictMode.setThreadPolicy(gfgPolicy);
         }
 
-
+/*    // Pour le test le test
         try {
             this.uploadToServer("3700496306026");
         } catch (IOException e) {
@@ -60,7 +60,7 @@ public class AjouterAFrigoQrcode extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
+*/
 
         this.scan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,7 +112,7 @@ public class AjouterAFrigoQrcode extends AppCompatActivity {
             }
 
             if (resultCode == RESULT_CANCELED) {
-                onBackPressed(); // revebu à l'activité précedebt
+                onBackPressed(); // revevu à l'activité précedent
             }
         }
 
@@ -139,24 +139,21 @@ public class AjouterAFrigoQrcode extends AppCompatActivity {
                     // parsing JSON
 
 
-
                     JSONObject result = new JSONObject(retSrc); //Convert String to JSON Object
 
 
                     JSONObject product = result.getJSONObject("product");
                     Object name = product.get("generic_name_fr");
-                    Object categories = product.get("categories");
+                    //Object categories = product.get("categories");
 
 
-
-
-                   Intent intent = new Intent(getApplicationContext(), AjouterAFrigoManuel.class);
-                   startActivity(intent);
+                    Intent intent = new Intent(getApplicationContext(), AjouterAFrigoManuel.class);
+                    startActivity(intent);
 
                     ListConteneurs.setName(name.toString());
-                    ListConteneurs.setCategorie(categories.toString());
 
-                   finish();
+
+                    finish();
 
 
                 }

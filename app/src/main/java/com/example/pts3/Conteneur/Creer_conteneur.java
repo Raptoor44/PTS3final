@@ -12,6 +12,7 @@ import com.example.pts3.MesConteneurs;
 import com.example.pts3.R;
 import com.example.pts3.model.Conteneurs;
 import com.example.pts3.model.ListConteneurs;
+import com.example.pts3.outils.Serializer;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class Creer_conteneur extends AppCompatActivity {
@@ -54,6 +55,8 @@ public class Creer_conteneur extends AppCompatActivity {
 
                     ListConteneurs.getConteneursList().add(new Conteneurs(titre_conteneur));
 
+
+                    Serializer.serialize("file", ListConteneurs.getConteneursList(), getApplicationContext());
 
                     Intent intent = new Intent(getApplicationContext(), MesConteneurs.class);
                     startActivity(intent);

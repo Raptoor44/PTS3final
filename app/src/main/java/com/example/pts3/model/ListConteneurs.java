@@ -1,14 +1,14 @@
 package com.example.pts3.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListConteneurs {
+public class ListConteneurs implements Serializable {
 
     public static List<Conteneurs> conteneursList = new ArrayList<Conteneurs>();
 
     private static String name = null;
-    private static String categorie = null;
 
 
     public static List<Conteneurs> getConteneursList() {
@@ -27,11 +27,5 @@ public class ListConteneurs {
         ListConteneurs.conteneursList = conteneursList;
     }
 
-    public static String getCategorie() {
-        return categorie;
-    }
 
-    public static void setCategorie(String categorie) {
-        ListConteneurs.categorie = categorie;
-    }
 }

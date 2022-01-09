@@ -29,7 +29,7 @@ public class Parametres extends AppCompatActivity {
             }
         });
 
-        this.accessibilité= findViewById(R.id.id_activity_parametres_boutton_accessibilité);
+        this.accessibilité = findViewById(R.id.id_activity_parametres_boutton_accessibilité);
 
         this.accessibilité.setOnClickListener(new View.OnClickListener() {
             @Override

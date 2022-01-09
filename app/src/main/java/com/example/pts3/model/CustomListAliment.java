@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class CustomListAliment extends BaseAdapter  {
+public class CustomListAliment extends BaseAdapter {
 
 
     private ArrayList<Aliment> listData;
@@ -84,7 +84,7 @@ public class CustomListAliment extends BaseAdapter  {
 
         date_peremption_layout.setText(dateAffiche);
 
-        quantite_layout.setText(aliment.getQuantité() + " "+aliment.getUnite_quantite());
+        quantite_layout.setText(aliment.getQuantité() + " " + aliment.getUnite_quantite());
 
 
         //   Log.e("nom de l'aliment", aliment.getNom());

@@ -12,7 +12,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="280dp"
         android:layout_marginEnd="100dp"
-        android:text="Ajout_manuel"
+        android:text="Ajout manuel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

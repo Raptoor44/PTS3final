@@ -11,6 +11,7 @@ import android.widget.Button;
 import com.example.pts3.R;
 import com.example.pts3.model.Conteneurs;
 import com.example.pts3.model.ListConteneurs;
+import com.example.pts3.outils.Serializer;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class ModificationConteneur extends AppCompatActivity {
@@ -26,9 +27,10 @@ public class ModificationConteneur extends AppCompatActivity {
 
         this.nom = findViewById(R.id.id_activity_creer_conteneur_text_input);
 
-        for(Conteneurs conteneur : ListConteneurs.getConteneursList()){
-            if(conteneur.isIsvalid()){
+        for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
+            if (conteneur.isIsvalid()) {
                 this.nom.setText(conteneur.getNom());
+                Serializer.serialize("file", ListConteneurs.getConteneursList(), getApplicationContext());
             }
         }
 
@@ -40,14 +42,13 @@ public class ModificationConteneur extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 extracted(ModificationConteneur.this, nom);
+                Serializer.serialize("file", ListConteneurs.getConteneursList(), getApplicationContext());
             }
+
         });
 
 
-
     }
-
-
 
 
 }

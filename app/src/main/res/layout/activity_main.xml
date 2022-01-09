@@ -25,12 +25,6 @@
             android:text="Mes conteneurs" />
 
         <Button
-            android:id="@+id/id_activity_main_ma_liste_de_courses"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ma liste de courses" />
-
-        <Button
             android:id="@+id/id_activity_main_idee_recettes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
