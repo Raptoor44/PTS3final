@@ -12,16 +12,16 @@
         android:layout_height="0dp"
         android:layout_marginTop="106dp"
         android:layout_marginBottom="44dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/id_activity_ajouter_recette_text_input_intitule"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/id_activity_ajouter_recette_text_input_intitule"
+            android:id="@+id/id_activity_ajouter_recette_text_input_nom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="insérer votre recette" />
+            android:hint="Nom" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -36,11 +36,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/id_activity_ajouter_recette_text_input_nom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nom" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -53,5 +48,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/id_activity_ajouter_recette_text_input_intitule"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="339dp"
+        android:hint="insérer votre recette"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

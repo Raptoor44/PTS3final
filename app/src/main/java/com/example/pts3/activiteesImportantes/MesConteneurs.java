@@ -29,7 +29,6 @@ public class MesConteneurs extends AppCompatActivity {
         setContentView(R.layout.activity_mes_conteneurs);
 
 
-
         this.descative_all_conteneurs();
 
         this.fleche_retour = findViewById(R.id.id_activity_mes_conteneurs_bouton_retour);
@@ -42,23 +41,23 @@ public class MesConteneurs extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-        public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-            Intent intent = new Intent(getApplicationContext(), Frigo.class);
-            startActivity(intent);
+            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(), Frigo.class);
+                startActivity(intent);
 
-            for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
+                for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
 
-                if (conteneur.getUni_id() == position) {
-                    conteneur.setIsvalid(true);
+                    if (conteneur.getUni_id() == position) {
+                        conteneur.setIsvalid(true);
+                    }
+
                 }
 
+
+                finish();
+
             }
-
-
-            finish();
-
-        }
-    });
+        });
 
         fleche_retour.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +80,7 @@ public class MesConteneurs extends AppCompatActivity {
 
     }
 
-    private void descative_all_conteneurs(){
+    private void descative_all_conteneurs() {
         for (Conteneurs conteneur : ListConteneurs.getConteneursList()) {
             conteneur.setIsvalid(false);
         }

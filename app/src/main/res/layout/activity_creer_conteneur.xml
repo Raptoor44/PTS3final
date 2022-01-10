@@ -7,15 +7,34 @@
     tools:context=".Conteneur.Creer_conteneur">
 
     <FrameLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:id="@+id/frameLayout12"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/id_activity_creer_conteneur_bouton_retour"
+                android:layout_width="92dp"
+                android:layout_height="52dp"
+                app:srcCompat="@drawable/fleche_retour" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="251dp">
+
+            </FrameLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"

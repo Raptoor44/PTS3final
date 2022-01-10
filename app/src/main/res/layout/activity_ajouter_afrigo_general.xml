@@ -51,4 +51,31 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/nourriture" />
 
+    <ImageButton
+        android:id="@+id/id_activity_ajouter_afrigo_general_bouton_retour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/fleche_retour"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="75dp" />
+
+    <FrameLayout
+        android:layout_width="88dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toTopOf="@+id/id_activity_ajouter_afrigo_general_bouton_retour"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="26dp"
+        android:layout_height="607dp"
+        android:layout_marginTop="49dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/id_activity_ajouter_afrigo_general_bouton_retour"
+        tools:layout_editor_absoluteX="1dp">
+
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

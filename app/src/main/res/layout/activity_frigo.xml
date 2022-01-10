@@ -94,17 +94,17 @@
 
                     <Button
                         android:id="@+id/id_activity_frigo_ajouter_produit"
-                        android:layout_width="133dp"
+                        android:layout_width="110dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="ajouter" />
 
                     <Button
                         android:id="@+id/id_activity_frigo_tri_ordre_alphabetique"
-                        android:layout_width="97dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="82dp"
                         android:layout_weight="1"
-                        android:text="Tri alpha" />
+                        android:text="Tri alphabetique" />
 
                     <Button
                         android:id="@+id/id_activity_frigo_tri_par_date"
@@ -119,7 +119,7 @@
                     android:id="@+id/id_activity_frigo_conteneurs_in"
                     android:layout_width="203dp"
                     android:layout_height="34dp"
-                    android:text="TextView" />
+                    android:text="Conteneur : " />
 
             </LinearLayout>
 

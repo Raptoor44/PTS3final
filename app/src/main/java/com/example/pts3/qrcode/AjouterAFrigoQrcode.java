@@ -10,9 +10,11 @@ import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.pts3.R;
 
+import com.example.pts3.aliment.AjouterAFrigoGeneral;
 import com.example.pts3.aliment.AjouterAFrigoManuel;
 import com.example.pts3.model.ListConteneurs;
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.HttpEntity;
@@ -37,7 +39,7 @@ public class AjouterAFrigoQrcode extends AppCompatActivity {
 
     private Button scan;
     private String information_scan;
-
+    private ImageButton retour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,18 @@ public class AjouterAFrigoQrcode extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 scannerQRCode();
+            }
+        });
+
+
+        this.retour = findViewById(R.id.id_activity_ajouter_afrigo_qrcode_retour);
+
+        this.retour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AjouterAFrigoGeneral.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

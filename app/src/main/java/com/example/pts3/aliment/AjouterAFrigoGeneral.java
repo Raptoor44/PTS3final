@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.pts3.R;
+import com.example.pts3.activiteesImportantes.Frigo;
 import com.example.pts3.qrcode.AjouterAFrigoQrcode;
 
 public class AjouterAFrigoGeneral extends AppCompatActivity {
@@ -15,6 +17,7 @@ public class AjouterAFrigoGeneral extends AppCompatActivity {
 
     private Button ajouter_produit;
     private Button ajouter_produit_scan;
+    private ImageButton retour;
 
 
     @Override
@@ -42,5 +45,18 @@ public class AjouterAFrigoGeneral extends AppCompatActivity {
                 finish();
             }
         });
+
+        this.retour = findViewById(R.id.id_activity_ajouter_afrigo_general_bouton_retour);
+
+        this.retour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Frigo.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
     }
 }

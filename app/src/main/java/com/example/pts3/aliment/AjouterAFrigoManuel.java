@@ -178,7 +178,7 @@ public class AjouterAFrigoManuel extends AppCompatActivity {
         this.retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Frigo.class);
+                Intent intent = new Intent(getApplicationContext(), AjouterAFrigoGeneral.class);
                 startActivity(intent);
                 finish();
             }

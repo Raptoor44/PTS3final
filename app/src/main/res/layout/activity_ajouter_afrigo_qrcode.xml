@@ -29,9 +29,9 @@
                 android:layout_height="200dp">
 
                 <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/id_activity_ajouter_afrigo_qrcode_retour"
+                    android:layout_width="75dp"
+                    android:layout_height="6dp"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/fleche_retour" />
 

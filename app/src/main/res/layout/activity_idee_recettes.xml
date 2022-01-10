@@ -8,20 +8,15 @@
 
     <FrameLayout
         android:id="@+id/frameLayout6"
-        android:layout_width="110dp"
-        android:layout_height="0dp"
+        android:layout_width="112dp"
+        android:layout_height="101dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
-        android:layout_marginBottom="41dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/id_activity_idee_recettes_retour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/id_activity_frigo_boutton_retour"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/fleche_retour" />
     </FrameLayout>
 
     <Button
@@ -35,6 +30,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
+    <ImageButton
+        android:id="@+id/id_activity_idee_recettes_retour"
+        android:layout_width="97dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/fleche_retour"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="61dp" />
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="351dp"
@@ -47,10 +50,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout6">
 
-        <ListView
-            android:id="@+id/id_activity_idee_recettes_listView"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:id="@+id/id_activity_idee_recettes_listView"
+                android:layout_width="match_parent"
+                android:layout_height="441dp" />
+        </FrameLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

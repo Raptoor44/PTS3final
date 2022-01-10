@@ -67,10 +67,10 @@ public class Frigo extends AppCompatActivity {
 
 
         conteneursName = findViewById(R.id.id_activity_frigo_conteneurs_in);
-        for(Conteneurs conteneurssss  : ListConteneurs.getConteneursList()){
-            if(conteneurssss.isIsvalid()){
+        for (Conteneurs conteneurssss : ListConteneurs.getConteneursList()) {
+            if (conteneurssss.isIsvalid()) {
 
-                conteneursName.setText(conteneurssss.getNom().toString());
+                conteneursName.setText(conteneursName.getText() + conteneurssss.getNom().toString());
             }
         }
 

@@ -24,12 +24,13 @@ public class Idee_recettes extends AppCompatActivity {
     private ImageButton boutton_retour;
     private Button ajouter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_idee_recettes);
 
-        this.boutton_retour = findViewById(R.id.id_activity_frigo_boutton_retour);
+        this.boutton_retour = findViewById(R.id.id_activity_idee_recettes_retour);
 
 
         List<Recette> recettesList = new LinkedList<Recette>();
