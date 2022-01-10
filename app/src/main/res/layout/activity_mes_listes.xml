@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MesListes">
+    tools:context=".activiteesImportantes.MesListes">
 
     <ImageButton
         android:id="@+id/id_activity_mes_listes_boutton_retour"

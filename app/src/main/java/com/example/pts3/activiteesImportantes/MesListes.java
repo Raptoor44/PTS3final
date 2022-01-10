@@ -1,4 +1,4 @@
-package com.example.pts3;
+package com.example.pts3.activiteesImportantes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.example.pts3.R;
 
 public class MesListes extends AppCompatActivity {
 

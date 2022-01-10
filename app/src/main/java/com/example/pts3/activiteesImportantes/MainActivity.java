@@ -1,4 +1,4 @@
-package com.example.pts3;
+package com.example.pts3.activiteesImportantes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.pts3.Activity_static.MainActivity_static;
+import com.example.pts3.R;
 import com.example.pts3.model.Conteneurs;
 import com.example.pts3.model.ListConteneurs;
 import com.example.pts3.outils.Serializer;

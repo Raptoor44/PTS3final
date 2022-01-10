@@ -41,11 +41,11 @@
                 android:layout_height="wrap_content"
                 android:text="Modifier le produit" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/id_activity_gestion_un_aliment_supprimer"
                 android:layout_width="match_parent"
-                android:layout_height="233dp"
-                app:srcCompat="@drawable/_200px_octagon_delete_svg" />
+                android:layout_height="wrap_content"
+                android:text="Supprimer" />
 
         </LinearLayout>
     </FrameLayout>

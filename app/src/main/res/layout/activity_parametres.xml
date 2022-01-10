@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Parametres">
+    tools:context=".activiteesImportantes.Parametres">
 
     <ImageButton
         android:id="@+id/id_activity_parametres_fleche_retour"

@@ -9,9 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.pts3.Frigo;
+import com.example.pts3.activiteesImportantes.Frigo;
 import com.example.pts3.R;
-import com.example.pts3.model.Aliment;
 import com.example.pts3.model.Conteneurs;
 import com.example.pts3.model.ListConteneurs;
 import com.example.pts3.outils.Serializer;
@@ -19,7 +18,7 @@ import com.example.pts3.outils.Serializer;
 public class GestionUnAliment extends AppCompatActivity {
 
 
-    private ImageButton supprimer;
+    private Button supprimer;
     private Button modifier_produit;
     private ImageButton retour;
 

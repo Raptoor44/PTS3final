@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Accessibilite">
+    tools:context=".activiteesImportantes.Accessibilite">
 
     <ImageButton
         android:id="@+id/id_activity_accessibilite_fleche_retour"

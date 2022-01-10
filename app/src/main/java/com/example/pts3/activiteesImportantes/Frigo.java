@@ -1,4 +1,4 @@
-package com.example.pts3;
+package com.example.pts3.activiteesImportantes;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -19,7 +19,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
+import com.example.pts3.R;
 import com.example.pts3.aliment.AjouterAFrigoGeneral;
 import com.example.pts3.aliment.GestionUnAliment;
 import com.example.pts3.model.Aliment;
@@ -41,6 +43,8 @@ public class Frigo extends AppCompatActivity {
     private ListView listView;
 
 
+    private TextView conteneursName;
+
     private CheckBox checkCategorie;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -60,6 +64,15 @@ public class Frigo extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+
+
+        conteneursName = findViewById(R.id.id_activity_frigo_conteneurs_in);
+        for(Conteneurs conteneurssss  : ListConteneurs.getConteneursList()){
+            if(conteneurssss.isIsvalid()){
+
+                conteneursName.setText(conteneurssss.getNom().toString());
+            }
+        }
 
 
         Button tri_ordre_alpha = findViewById(R.id.id_activity_frigo_tri_ordre_alphabetique);

@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.example.pts3.Activity_static.MainActivity_static;
-import com.example.pts3.Idee_recettes;
+import com.example.pts3.activiteesImportantes.Idee_recettes;
 import com.example.pts3.R;
 import com.example.pts3.outils.Serializer;
 

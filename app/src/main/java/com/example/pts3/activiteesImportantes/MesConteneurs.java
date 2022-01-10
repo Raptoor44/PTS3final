@@ -1,4 +1,4 @@
-package com.example.pts3;
+package com.example.pts3.activiteesImportantes;
 
 import static com.example.pts3.model.ListConteneurs.conteneursList;
 
@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 
 import com.example.pts3.Conteneur.Creer_conteneur;
+import com.example.pts3.R;
 import com.example.pts3.model.Conteneurs;
 import com.example.pts3.model.CustomListConteneurs;
 import com.example.pts3.model.ListConteneurs;

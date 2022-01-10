@@ -7,8 +7,8 @@
     android:background="#000000">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="134dp"
+        android:layout_width="354dp"
+        android:layout_height="166dp"
         android:orientation="horizontal">
 
         <FrameLayout
@@ -39,7 +39,7 @@
                     android:id="@+id/id_adaptater_view_conteneurs_modifier_supprimer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Modifier/supprimer la rubrique" />
+                    android:text="Modifier" />
             </LinearLayout>
         </FrameLayout>
 
@@ -48,8 +48,8 @@
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="144dp"
                 android:orientation="vertical">
 
                 <TextView

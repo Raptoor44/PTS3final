@@ -1,6 +1,4 @@
-package com.example.pts3;
-
-import static com.example.pts3.model.ListConteneurs.conteneursList;
+package com.example.pts3.activiteesImportantes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
-import com.example.pts3.model.CustomListConteneurs;
+import com.example.pts3.R;
 import com.example.pts3.model.CustomListRecettes;
 import com.example.pts3.model.Recette;
 import com.example.pts3.model.Recettes;

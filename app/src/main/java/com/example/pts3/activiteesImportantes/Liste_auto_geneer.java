@@ -1,8 +1,10 @@
-package com.example.pts3;
+package com.example.pts3.activiteesImportantes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.pts3.R;
 
 public class Liste_auto_geneer extends AppCompatActivity {
 

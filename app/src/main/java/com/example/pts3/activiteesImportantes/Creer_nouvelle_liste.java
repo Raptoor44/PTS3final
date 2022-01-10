@@ -1,4 +1,4 @@
-package com.example.pts3;
+package com.example.pts3.activiteesImportantes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,9 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.pts3.model.ListConteneurs;
-import com.example.pts3.model.Recettes;
-import com.example.pts3.outils.Serializer;
+import com.example.pts3.R;
 
 public class Creer_nouvelle_liste extends AppCompatActivity {
 

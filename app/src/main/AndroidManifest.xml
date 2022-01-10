@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design">
         <activity
-            android:name=".AjouterRecette"
+            android:name=".activiteesImportantes.AjouterRecette"
             android:exported="false" />
         <activity
             android:name=".Conteneur.ModificationConteneur"
@@ -39,31 +39,31 @@
             android:name=".aliment.AjouterAFrigoManuel"
             android:exported="true" />
         <activity
-            android:name=".Parametres"
+            android:name=".activiteesImportantes.Parametres"
             android:exported="true" />
         <activity
-            android:name=".Accessibilite"
+            android:name=".activiteesImportantes.Accessibilite"
             android:exported="true" />
         <activity
-            android:name=".Creer_nouvelle_liste"
+            android:name=".activiteesImportantes.Creer_nouvelle_liste"
             android:exported="true" />
         <activity
-            android:name=".Liste_auto_geneer"
+            android:name=".activiteesImportantes.Liste_auto_geneer"
             android:exported="true" />
         <activity
-            android:name=".MesListes"
+            android:name=".activiteesImportantes.MesListes"
             android:exported="true" />
         <activity
-            android:name=".Idee_recettes"
+            android:name=".activiteesImportantes.Idee_recettes"
             android:exported="true" />
         <activity
-            android:name=".Frigo"
+            android:name=".activiteesImportantes.Frigo"
             android:exported="true" />
         <activity
-            android:name=".MesConteneurs"
+            android:name=".activiteesImportantes.MesConteneurs"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activiteesImportantes.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

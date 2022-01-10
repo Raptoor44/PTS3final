@@ -46,7 +46,7 @@
                 android:id="@+id/id__activity_ajouter_afrigo_qrcode_scanner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Scanné le produit" />
+                android:text="Scanner le produit" />
 
         </LinearLayout>
     </FrameLayout>

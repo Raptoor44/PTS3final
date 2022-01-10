@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Frigo">
+    tools:context=".activiteesImportantes.Frigo">
 
     <LinearLayout
         android:id="@+id/linearLayout10"
@@ -51,6 +51,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/fleche_retour" />
+
                     </FrameLayout>
 
                     <FrameLayout
@@ -113,6 +114,12 @@
                         android:text="Tri par date" />
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/id_activity_frigo_conteneurs_in"
+                    android:layout_width="203dp"
+                    android:layout_height="34dp"
+                    android:text="TextView" />
 
             </LinearLayout>
 

@@ -3,7 +3,7 @@ package com.example.pts3.Conteneur;
 import android.content.Intent;
 import android.widget.Toast;
 
-import com.example.pts3.MesConteneurs;
+import com.example.pts3.activiteesImportantes.MesConteneurs;
 import com.example.pts3.model.Conteneurs;
 import com.example.pts3.model.ListConteneurs;
 import com.google.android.material.textfield.TextInputEditText;

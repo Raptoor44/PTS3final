@@ -1,4 +1,4 @@
-package com.example.pts3;
+package com.example.pts3.outils;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -10,6 +10,8 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
+import com.example.pts3.activiteesImportantes.MainActivity;
+import com.example.pts3.R;
 import com.example.pts3.model.ListConteneurs;
 import com.example.pts3.model.Notification;
 import com.google.firebase.messaging.FirebaseMessagingService;

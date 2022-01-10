@@ -36,11 +36,11 @@
                 android:layout_height="wrap_content"
                 android:text="Modifier conteneur" />
 
-            <ImageButton
-                android:id="@+id/id_activity_gestion_un_conteneur_supprimer"
+            <Button
+                android:id="@+id/id_activity_gestion_un_conteneur_retour_BUTTON"
                 android:layout_width="match_parent"
-                android:layout_height="279dp"
-                app:srcCompat="@drawable/_200px_octagon_delete_svg" />
+                android:layout_height="wrap_content"
+                android:text="Supprimer" />
 
         </LinearLayout>
     </FrameLayout>

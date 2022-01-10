@@ -1,6 +1,6 @@
 package com.example.pts3.Activity_static;
 
-import com.example.pts3.MainActivity;
+import com.example.pts3.activiteesImportantes.MainActivity;
 
 public class MainActivity_static {
 
