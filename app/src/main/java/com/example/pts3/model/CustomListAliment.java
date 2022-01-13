@@ -66,6 +66,9 @@ public class CustomListAliment extends BaseAdapter {
         convertview = layoutInflater.inflate(R.layout.adaptater_view_aliment, null);
 
         Aliment aliment = getItem(position);
+        aliment.setId(position);
+
+
 
         TextView titre_layout = convertview.findViewById(R.id.id_adaptater_view_aliment_titre_produit);
         TextView date_peremption_layout = convertview.findViewById(R.id.id_adapter_view_aliment_date_peremption);

@@ -134,9 +134,6 @@ public class Frigo extends AppCompatActivity {
                 for (Aliment aliment : finalConteneur_.getAliments()) {
 
 
-                    Log.e("position layout ", position + "");
-                    Log.e("id aliment ", aliment.getId() + "");
-
                     if (position == aliment.getId()) {
                         aliment.setIsvalide(true);
                     }

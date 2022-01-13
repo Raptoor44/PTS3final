@@ -66,8 +66,8 @@ public class CustomListRecettes extends BaseAdapter {
             @Override
             public void onClick(View view) {
 
-                for (Recette recette : Recettes.getRecettes()) {
-                    Recettes.getRecettes().remove(recette);
+                for(int i = 0 ; i < Recettes.getRecettes().size(); i++){
+                    Recettes.getRecettes().remove(i);
                 }
                 Intent intent = new Intent(MainActivity_static.getMain(), Idee_recettes.class);
                 MainActivity_static.getMain().startActivity(intent);
